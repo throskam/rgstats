@@ -29,6 +29,9 @@ Commands:
 	cd bots
 	git clone https://github.com/mpeterv/robotgame-bots.git
 
+You can now place your bots in the _bots_ directory.
+Time to time you get run `git pull` in the different git repositories in order to keep them up to date.
+
 Usage
 -----
 
