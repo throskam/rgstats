@@ -30,7 +30,7 @@ Commands:
 	git clone https://github.com/mpeterv/robotgame-bots.git
 
 You can now place your bots in the _bots_ directory.
-Time to time you get run `git pull` in the different git repositories in order to keep them up to date.
+Time to time you can run `git pull` in the different git repositories in order to keep them up to date.
 
 Usage
 -----
@@ -54,4 +54,59 @@ Usage
 Example
 -------
 
-	./rgstats YOUR_BOT SECOND_BOT THIRD_BOT -d DIR_BOT SECOND_DIR_BOT -fl -c 10 -t 8
+	./rgstats.py bots/robotgame-bots/Stalinsbeard.py bots/robotgame-bots/stupid272.py -fl -c 2 -t 8
+
+	|——————————————————————————————————————————————————|
+	|                                                  |
+	|            => ./rgstats.py -v 0.1 <=             |
+	|                                                  |
+	|——————————————————————————————————————————————————|
+	|            C O N F I G U R A T I O N             |
+	|——————————————————————————————————————————————————|
+	|                   Robot: Stalinsbeard            |
+	|                Opponent: stupid272               |
+	|                    Mode: free for all            |
+	|                   Count: 2                       |
+	|                 Threads: 8                       |
+	|——————————————————————————————————————————————————|
+	|                  R E S U L T S                   |
+	|——————————————————————————————————————————————————|
+	|                                                  |
+	|     Global informations                          |
+	|     ========================================     |
+	|                                                  |
+	|                   Total: 4                       |
+	|                 Success: 4                       |
+	|                 Failure: 0                       |
+	|                                                  |
+	|     Robots                                       |
+	|     ========================================     |
+	|                                                  |
+	|                   Stalinsbeard                   |
+	|          ------------------------------          |
+	|                   Total: 4                       |
+	|                 Success: 4                       |
+	|                 Failure: 0                       |
+	|                                                  |
+	|          [3, 0, 1]    vs.     stupid272          |
+	|                                                  |
+	|                    stupid272                     |
+	|          ------------------------------          |
+	|                   Total: 4                       |
+	|                 Success: 4                       |
+	|                 Failure: 0                       |
+	|                                                  |
+	|          [1, 0, 3]    vs.  Stalinsbeard          |
+	|                                                  |
+	|——————————————————————————————————————————————————|
+
+Remarks:
+- The results are displayed as [win, draw, lose]
+- Whenever a bot throw an exception, I consider the match as a failure and don't take it into account for the stats.
+
+Upcoming
+--------
+
+Obviously more stats ...
+Especially in the JSON format.
+Later on I may create an other script which takes the JSON output and produce nice graphs such as the rgcompare ones.
