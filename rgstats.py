@@ -242,9 +242,11 @@ if __name__ == '__main__':
 		print '|' + '—' * 50 + '|'
 		print '|' + string.center('C O N F I G U R A T I O N', 50, ' ') + '|'
 		print '|' + '—' * 50 + '|'
-		print '|%24s: %-24s|' % ('Robot', args.robot)
+		bot_name = name(args.robot)
+		print '|%24s: %-24s|' % ('Robot', (bot_name[:11] + '..') if len(bot_name) > 13 else bot_name)
 		for opp in args.opponent:
-			print '|%24s: %-24s|' % ('Opponent', opp)
+			opp_name = name(opp)
+			print '|%24s: %-24s|' % ('Opponent', (opp_name[:11] + '..') if len(opp_name) > 13 else opp_name)
 		print '|%24s: %-24s|' % ('Mode', mode)
 		print '|%24s: %-24d|' % ('Count', args.count)
 		print '|%24s: %-24d|' % ('Threads', args.threads)
